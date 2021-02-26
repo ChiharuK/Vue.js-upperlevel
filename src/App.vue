@@ -12,12 +12,12 @@ export default {
   data() {
     return {
       zip:"",
-      allAddress:"",
+      allAddress:""
     };
   },
   methods: {
     askAddress() {
-      axios.get("https://apis.postcode-jp.com/api/v4/postcodes/string?apiKey=string=	U4SDshjc0nvYZTLSI20FCNv6Mk7yB3uRXHXNCT7").then((response) => {this.allAddress = response.data.results[0];})
+      axios.get(`https://apis.postcode-jp.com/api/v4/postcodes/${this.zip}?apiKey=U4SDshjc0nvYZTLSI20FCNv6Mk7yB3uRXHXNCT7`).then((response) => {this.allAddress = response.data.results[0].allAddress;})
     },
   }
 }
